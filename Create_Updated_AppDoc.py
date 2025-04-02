@@ -804,23 +804,25 @@ def generate_pdf_report(geojson_file_path, output_pdf_path):
     suffix = extract_suffix(route_name)
 
     df = pd.read_csv("3DFaktor.csv")  # CSV-Datei laden
-    #bundesland = get_bundesland_from_geo_data(geo_data)  # Bundesland bestimmen
+    bundesland = get_bundesland_from_geo_data(geo_data)  # Bundesland bestimmen
 
-    #D_Faktor = df[df.iloc[:, 1] == bundesland].iloc[0, 2] if bundesland in df.iloc[:, 1].values else "Nicht gefunden"
+    D_Faktor = df[df.iloc[:, 1] == bundesland].iloc[0, 2] if bundesland in df.iloc[:, 1].values else "Nicht gefunden"
 
-    # Berechnungen für Tabelle
+    #Berechnungen für Tabelle
     line_length_km = route_length # Beispielwert, muss berechnet werden
     #equivalent_3d_distance = round(line_length_km * D_Faktor, 2)
-    # flight_time_mk1 = round(equivalent_3d_distance*1000 / 24 /60,0)
-    # flight_time_mk2 = round(equivalent_3d_distance*1000 / 28/60,0)
-    # flight_time_octo = round(equivalent_3d_distance*1000 / 3/60,0)
+    equivalent_3d_distance = 10 # hier als dummy eingefügt
+
+    flight_time_mk1 = round(equivalent_3d_distance*1000 / 24 /60,0)
+    flight_time_mk2 = round(equivalent_3d_distance*1000 / 28/60,0)
+    flight_time_octo = round(equivalent_3d_distance*1000 / 3/60,0)
     
-    # table_data = [["From take-off/landing site and back", 
-    #            f"{line_length_km:.2f} km", 
-    #            f"{equivalent_3d_distance:.2f} km", 
-    #            f"\n"
-    #            f"{int(flight_time_octo)} min\n"
-    #            f"\n"]]
+    table_data = [["From take-off/landing site and back", 
+               f"{line_length_km:.2f} km", #.2f deleted
+               f"{equivalent_3d_distance:.2f} km", #.2f deletede
+               f"\n"
+               f"{int(flight_time_octo)} min\n"
+               f"\n"]]
     col_widths = [60, 35, 35, 45]
 
     pdf.chapter_body2(f"Appendix {suffix} to the Flight Operation Document {route_name[:10]} \n" 
@@ -834,8 +836,9 @@ def generate_pdf_report(geojson_file_path, output_pdf_path):
 
     pdf.add_page()
     pdf.chapter_title("2. Flight Distances and Times")
-    #pdf.add_table(table_data, col_widths)
+    pdf.add_table(table_data, col_widths)
     pdf.chapter_body("")
+
     pdf.chapter_title("3. Takeoff / Landing Site")
     pdf.chapter_body(f"Takeoff and Landing occur at coordinates ({latitude} {longitude}), see Figure A{suffix}.2 for details.")
     pdf.image(image_path2,x=20, y=107, w=170)
@@ -984,8 +987,8 @@ def generate_docx_report(docx_path, output_docx_path):
 # ============================
 
 if __name__ == "__main__":
-    #geojson_file_path = "24-39188_20250203.geojson"
-    geojson_file_path = "25-47289_20250210_2.geojson"
+    geojson_file_path = "24-39188_20250203.geojson"
+    #geojson_file_path = "25-47289_20250210_2.geojson"
     output_pdf_path = "flight_report.pdf"
     output_docx_path = "flight_report.docx"
     output_docx_path2 = "flight_report3.docx"
