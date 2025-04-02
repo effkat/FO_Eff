@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document id="root_doc">
+    <Schema id="name.schema">
+      <SimpleField name="BaseData" type="string"/>
+      <SimpleField name="fn:color" type="string"/>
+      <SimpleField name="fn:title" type="string"/>
+      <SimpleField name="fn:type" type="string"/>
+      <SimpleField name="fn:waypointSpeed" type="int"/>
+      <SimpleField name="fn:waypointTurnMode" type="string"/>
+      <SimpleField name="fn:bufferRadius" type="int"/>
+      <SimpleField name="altitude" type="int"/>
+      <SimpleField name="fn:name" type="string"/>
+      <SimpleField name="minAltitude" type="int"/>
+    </Schema>
+    <Document id="name">
+      <name>name</name>
+      <Placemark id="name.1">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#0017ff</SimpleData>
+            <SimpleData name="fn:type">line-buffer</SimpleData>
+            <SimpleData name="fn:waypointSpeed">(225:5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5)</SimpleData>
+            <SimpleData name="fn:waypointTurnMode">(225:0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+            <SimpleData name="altitude">100</SimpleData>
+            <SimpleData name="fn:name">FO2024-022: App. 28</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <LineString>
+          <extrude>0</extrude>
+          <coordinates>
+            13.86399,54.058222,120
+            13.8918557646859,54.0554614438032,120
+            13.8977695057291,54.0550502527755,120
+            13.9093968204278,54.0613496290829,120
+            13.9115050252314,54.0620501386475,120
+            13.9138586578636,54.0652719307418,120
+            13.9144841267321,54.0657972930527,120
+            13.9152340289757,54.065997162862,120
+            13.9157564177945,54.0659366636191,120
+            13.9168752950355,54.0658059318721,120
+            13.91933838831,54.065663995633,120
+            13.9282397929025,54.0676217663399,120
+            13.9491074970717,54.0656425634221,120
+            13.9498930190618,54.0652909116018,0
+            13.9496854476648,54.0648332325029,0
+            13.9489375771157,54.0645399643601,0
+            13.9474018797303,54.0629897889219,0
+            13.9474868046521,54.0619143805597,0
+            13.9497976449327,54.0597349645691,0
+            13.9535306173824,54.0583191534851,0
+            13.9555426191201,54.0586234108199,0
+            13.9606075504015,54.0605393668282,0
+            13.9615104024396,54.0615582596051,0
+            13.9616766051827,54.0630811905458,120
+            13.9610750545445,54.0645995144552,0
+            13.961278159458,54.0649435018666,120
+            13.9640254964993,54.0655411698232,0
+            13.9659145492334,54.0659900993615,120
+            13.9691923793719,54.0655360435242,0
+            13.9735688853898,54.0646506325828,0
+            13.9764632807124,54.0638785808264,0
+            13.9782906989496,54.0632741405223,0
+            13.9787035031883,54.0630346855478,0
+            13.9796492614255,54.0620657794467,0
+            13.9785172449257,54.0614731075804,0
+            13.97947155132,54.0598174885368,0
+            13.9824407195526,54.0585200382162,0
+            13.9834506754497,54.0580680504806,0
+            13.9893850770926,54.0520484120911,120
+            13.9907269415388,54.050681593028,0
+            13.9910221193603,54.0497312060204,0
+            13.990558823308,54.0487123586952,0
+            13.9918372484715,54.0480222592219,0
+            13.994269554752,54.0474673978238,0
+            13.9955473774194,54.0455993165032,0
+            14.003813149625,54.0415276616791,0
+            14.0083659826097,54.039499916531,0
+            14.0111157427593,54.0390502857001,0
+            14.0140349467929,54.0398991650911,0
+            14.0183693256052,54.0412578745386,0
+            14.0195591502339,54.0416157859752,0
+            14.0279803512502,54.0422027580022,0
+            14.0303739112903,54.0420730949807,0
+            14.0311975331831,54.0415594759239,0
+            14.0318266995346,54.0406252294583,0
+            14.026595474432,54.0348529802984,0
+            14.024251760613,54.0333074324041,0
+            14.0239432561168,54.0328876072878,0
+            14.0242752241091,54.032421928436,0
+            14.0257253643854,54.0314031946574,0
+            14.033919168807,54.024610024566,0
+            14.0348434416133,54.0217818937176,0
+            14.0360902390895,54.0207271368406,0
+            14.0366390963098,54.0192034809203,0
+            14.0399365256871,54.0157317405665,0
+            14.0403984976851,54.0156735065953,0
+            14.0471913117502,54.0182586418163,0
+            14.0473903293475,54.0188067335947,0
+            14.0464155017819,54.0194494758733,0
+            14.0452318316492,54.0195755230487,0
+            14.0442771355069,54.0193139025187,0
+            14.0411390705099,54.018482519714,0
+            14.0407536991602,54.0182700144789,0
+            14.0402049595776,54.0179695364565,0
+            14.0403928450329,54.0154039240799,0
+            14.0408001392338,54.014966070047,0
+            14.0406531295638,54.0142710625007,0
+            14.0408255817682,54.0116079075893,0
+            14.040345779704,54.0114499358577,0
+            14.0384472536423,54.0111958541823,0
+            14.0384056903218,54.0109379210265,0
+            14.038472969149,54.0104604390401,0
+            14.0386604516638,54.0101689485883,0
+            14.0400586305908,54.0101561476667,0
+            14.041284669955,54.0104790628675,0
+            14.0422158044893,54.0100349743722,0
+            14.0453499994353,54.0085452343911,0
+            14.0483092502922,54.008230811973,0
+            14.0577261270095,54.0047075075071,0
+            14.0589936958601,54.0038124353823,0
+            14.0568784011298,54.0018984684354,0
+            14.0568233040385,53.999671061698,0
+            14.0580482173817,53.9989390472442,0
+            14.0602378482822,53.9989002357799,0
+            14.0612166950401,53.9985399959153,0
+            14.0614997296428,53.9970754215915,0
+            14.0733179680239,53.984662204439,0
+            14.005730625462,53.9544405482773,0
+            13.9989638867641,53.9254418497021,0
+            13.9995253042521,53.9235752694701,0
+            13.996217554032,53.9191173748001,0
+            13.9949617294056,53.9186206791902,0
+            13.9930275431721,53.9184827176776,0
+            13.9920110667385,53.9184173232021,0
+            13.9914462062848,53.9187900004245,0
+            13.9914272208296,53.9201279418893,0
+            13.9912227244752,53.9210414324383,0
+            13.9903218083533,53.9217460911665,0
+            13.9895140976232,53.9218271577803,0
+            13.9887063868946,53.9216361649387,0
+            13.9856017936949,53.9216372392636,0
+            13.9838060245339,53.9233192858734,0
+            13.9782767045255,53.9246047498543,0
+            13.9762743361845,53.9249761309892,0
+            13.9752450503282,53.9244800804778,0
+            13.9744536046088,53.9233224287628,0
+            13.9732495952517,53.922106555361,0
+            13.9708979416139,53.9217467139506,0
+            13.9695429512126,53.9209186272775,0
+            13.9647170930128,53.9161818164256,0
+            13.9633689178249,53.9155573925591,0
+            13.9617754827651,53.9152218671971,0
+            13.9603608825742,53.9148428975595,0
+            13.9601317050701,53.9135971790667,0
+            13.9603708685833,53.91185994306,0
+            13.9589659934419,53.9112197591616,0
+            13.9569339631758,53.9115438430358,0
+            13.9554379941812,53.9126489978604,0
+            13.9533971964128,53.9135205133568,0
+            13.9534643231426,53.9144725392962,0
+            13.9550204729289,53.9156610723141,0
+            13.9572572449612,53.9158043507653,0
+            13.9594405718849,53.9149794593081,0
+            13.9590074218211,53.9131494483786,0
+            13.9561790643851,53.9109411858568,0
+            13.9565388229427,53.9086114964719,0
+            13.9540417737759,53.907010368543,0
+            13.9549997800304,53.9050410629883,0
+            13.9538157998288,53.9040983278868,0
+            13.9517604383416,53.8987636664028,0
+            13.9514448437893,53.8949405017253,0
+            13.948967878755,53.8908374761809,0
+            13.9484474769388,53.8883280983324,0
+            13.9456285157962,53.8869136804988,0
+            13.9431612822472,53.8857822554107,0
+            13.9405241034044,53.8865801195479,0
+            13.9365581368509,53.8848484350299,0
+            13.9356524056397,53.884127459888,0
+            13.9344069842378,53.8833616943726,0
+            13.9316716431321,53.8833715963492,0
+            13.927018272549,53.8847181777771,0
+            13.9255544471012,53.8830128101328,0
+            13.9244979247078,53.8817444704892,0
+            13.9230440903424,53.8812233098449,0
+            13.9218645904318,53.8814549316772,0
+            13.9214040359782,53.8825118110934,0
+            13.8708464567525,53.9233524745239,120
+            13.8395544598995,53.9415493705213,0
+            13.8350356605372,53.9480074282416,120
+            13.837460355488,53.9505093873937,0
+            13.839506930716,53.9511102817114,0
+            13.8401138183162,53.9523380971886,120
+            13.8379341431675,53.9602666038556,120
+            13.8368344775593,53.9624633772042,120
+            13.8352218977494,53.965027696469,120
+            13.8352857367223,53.9666763466117,120
+            13.8312458444625,53.9701394825368,120
+            13.8302630078596,53.9706975270835,120
+            13.8286589844222,53.9720169940102,120
+            13.8270740578822,53.9720856291688,120
+            13.826029810075,53.9721409212179,120
+            13.8234650641008,53.9725533068262,120
+            13.8203507278797,53.9737678844951,120
+            13.8196030548739,53.9744489518272,120
+            13.8148459037603,53.9757937255337,120
+            13.8140528413605,53.9776284061123,120
+            13.8135576751866,53.9779206641421,120
+            13.8124316705689,53.9788486875441,120
+            13.8112972777875,53.9789305597531,120
+            13.8102652183167,53.9790485029228,120
+            13.8093277156185,53.9790959466115,120
+            13.7930499355385,53.9801211656669,120
+            13.7908824806056,53.9820653587679,120
+            13.7894997484209,53.9829534744839,120
+            13.7758565045013,53.9834797769015,120
+            13.7746865769506,53.9832574214526,120
+            13.7636844619476,53.981485491461,120
+            13.7564743902983,53.9806843584396,120
+            13.7546833313482,53.980923887008,120
+            13.7539179310455,53.9822169659784,120
+            13.7552058593433,53.9842395456445,0
+            13.7540868373838,53.9855980831078,120
+            13.7511615953003,53.9860650440463,120
+            13.7499370217767,53.9864462558938,120
+            13.7483408254941,53.9869943919022,120
+            13.7475603428299,53.9874945522501,120
+            13.7442400670939,53.9876976909831,120
+            13.7429684665721,53.9865587973459,120
+            13.7408711422889,53.9863599625337,120
+            13.7358237335748,53.9873782804472,120
+            13.7323838260434,53.9871964358121,120
+            13.73053713092,53.993099254744,120
+            13.7305677784247,53.9937912002148,120
+            13.7295283058376,54.0117100344341,120
+            13.7315330043171,54.0153326238372,120
+            13.7312550157354,54.017705977401,120
+            13.7286049466464,54.0184396351253,120
+            13.7271650802869,54.0195175040745,120
+            13.7251129146964,54.0198637282221,120
+            13.7241763100941,54.0203766582468,120
+            13.7236476525374,54.0208787817125,120
+            13.7213319659339,54.0218772265416,120
+            13.720535970167,54.0231168659581,120
+            13.7198802413722,54.0246752653335,0
+            13.722154564039,54.0276812043494,120
+            13.7309687737694,54.0316260129705,120
+            13.741939820848,54.0350168446895,120
+            13.7449775611171,54.0354592764979,120
+            13.7469171140285,54.0358211488572,120
+            13.7495209149438,54.0365334551829,120
+            13.7520720436259,54.0360490144632,0
+            13.753535484693,54.0343309526993,0
+            13.7604846959253,54.0344043691202,120
+            13.7686016171285,54.0349284056668,0
+            13.86399,54.058222,120
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark id="name.2">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title"><![CDATA[T/O & LDG Site]]></SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.86399,54.058222,90
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.3">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">P1</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9992391803237,53.9245268626087,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.4">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">P2</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9846928838158,53.9224890756367,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.5">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">P3</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9545186353229,53.9060324132698,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.6">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">P4</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9180597264064,53.8852150498667,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.7">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">PIS Klinikum Anklam</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.6993603620492,53.8485185784998,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.8">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">W1</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9127454292592,54.0635632436322,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.9">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">W7</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.0158439804427,53.9588093889968,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.10">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">W3</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.8871057706162,53.910139187237,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.11">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">N1</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.8958870510829,54.0548086919545,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.12">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#ffc942</SimpleData>
+            <SimpleData name="fn:type">polygon-buffer</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+            <SimpleData name="altitude">120</SimpleData>
+            <SimpleData name="fn:name">DDA 2 Mk. 1</SimpleData>
+            <SimpleData name="minAltitude">0</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                13.7248722802184,54.0258715380795,0
+                13.7331351779918,54.029683856191,0
+                13.7345361537394,54.0300869002325,0
+                13.7309050533336,54.0342682516467,0
+                13.7291037988019,54.0336637449144,0
+                13.7276742317128,54.0331263982183,0
+                13.7202118915095,54.0297846175673,0
+                13.7248722802184,54.0258715380795,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark id="name.13">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#ff42f3</SimpleData>
+            <SimpleData name="fn:type">polygon-buffer</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+            <SimpleData name="fn:name">DDA 1 Mk. 2</SimpleData>
+            <SimpleData name="minAltitude">0</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                13.8281097098497,53.9686971870417,0
+                13.8276206739591,53.9684762568969,0
+                13.8277847341027,53.9683570444891,0
+                13.8281997097612,53.9680334662354,0
+                13.8287594443701,53.9683116301496,0
+                13.8281097098497,53.9686971870417,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark id="name.14">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#ff42eb</SimpleData>
+            <SimpleData name="fn:type">polygon-buffer</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+            <SimpleData name="fn:name">DDA 2 Mk. 2</SimpleData>
+            <SimpleData name="minAltitude">0</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                13.72022254885,54.0298129405714,0
+                13.7282845120962,54.0333928861747,0
+                13.7309512283957,54.034272805921,0
+                13.7306734199512,54.0345525031012,0
+                13.7289668823617,54.0340397235005,0
+                13.7280276252395,54.0337056364188,0
+                13.7198653665636,54.0300538168688,0
+                13.72022254885,54.0298129405714,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark id="name.15">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">N2</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.8637664620864,53.9276109943713,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.16">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">W5</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.7686299636881,54.0350048478547,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.17">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#ffd142</SimpleData>
+            <SimpleData name="fn:type">polygon-buffer</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+            <SimpleData name="altitude">120</SimpleData>
+            <SimpleData name="fn:name">DDA 1 Mk. 1</SimpleData>
+            <SimpleData name="minAltitude">0</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                13.8319839686465,53.9696370422195,0
+                13.83534306769,53.9707469290113,0
+                13.8348039530279,53.9712713707276,0
+                13.8281064901213,53.9686978841538,0
+                13.8287700158587,53.9682953813609,0
+                13.8319839686465,53.9696370422195,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark id="name.18">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#fb42ff</SimpleData>
+            <SimpleData name="fn:type">polygon-buffer</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+            <SimpleData name="altitude">120</SimpleData>
+            <SimpleData name="fn:name">DDA 2 Mk. 2</SimpleData>
+            <SimpleData name="minAltitude">0</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                13.7248408378612,54.0259182413434,0
+                13.7252286041479,54.0256009732222,0
+                13.7335254954836,54.0293922930325,0
+                13.7348826774863,54.0297990095148,0
+                13.7345503063835,54.030099977151,0
+                13.7331931243808,54.0297176665366,0
+                13.7248408378612,54.0259182413434,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark id="name.19">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">R1</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.7232645482878,54.0210707060859,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.20">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">W4/N3</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.7534717776746,54.0343415768071,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.21">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">W2/N5</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9157033934187,53.8871671410582,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.22">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">E1</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.0406872186546,53.9585787846399,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.23">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#ff42f3</SimpleData>
+            <SimpleData name="fn:type">polygon-buffer</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+            <SimpleData name="altitude">120</SimpleData>
+            <SimpleData name="fn:name">DDA 1 Mk. 2</SimpleData>
+            <SimpleData name="minAltitude">0</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                13.8348137547486,53.9712755786931,0
+                13.8353344663366,53.9707461523643,0
+                13.8359072490831,53.9709080437736,0
+                13.835282395178,53.971433092666,0
+                13.8348137547486,53.9712755786931,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark id="name.24">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">R3/H2</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.0251724783388,54.0338956498178,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.25">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">H1</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.0126628283186,54.0395243785703,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.26">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">R2</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.0145091011179,54.0400627253728,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.27">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">W8</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.9538841949157,54.0584212094935,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.28">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">R4/H3</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.0435206843368,54.0180154721319,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.29">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">W9</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.0384544487832,54.0105904852861,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.30">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:title">E2</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.76683,53.982,90
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.31">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">R5</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.7528142029318,54.03517669425,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.32">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="fn:color">#376ef5</SimpleData>
+            <SimpleData name="fn:title">W6/N4</SimpleData>
+            <SimpleData name="fn:type">point</SimpleData>
+            <SimpleData name="fn:bufferRadius">259</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            14.0462181252823,53.9724077836574,120
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark id="name.33">
+        <ExtendedData>
+          <SchemaData schemaUrl="#name.schema">
+            <SimpleData name="BaseData"><![CDATA[{ "number": "24-39188", "name": "Hansegas_App. 28 NE2 TO3_for figures", "description": "", "startDate": "2024-07-25T12:29:39.0033894+00:00", "endDate": "2024-07-18T11:23:27.6264053+00:00", "deadlineDate": null, "durationInHours": 60, "duration": 60, "location": "54.008562, 13.790907", "addressAdditional": null, "street": "Dratelnstraße", "zipCode": "21109", "houseNumber": "29", "city": "Hamburg", "country": "Germany", "coordinateLat": 54.008688999999997, "coordinateLng": 13.791010999999999, "upperLimitAGL": 120, "lowerLimitAGL": 0, "safetyBufferRadius": 259, "jsonData": null, "isReferenceProject": false, "isTemplate": false, "isFollowing": false, "fileCount": 0, "totalImageCount": 0, "uncheckedImageCount": 0, "checkedImageCount": 0, "checkedWithFindingsImageCount": 0, "orthophotoCount": 0, "pointCloudCount": 0, "findingCount": 0, "reportCount": 0, "damageClasses": "", "projectEuInputs": 0, "projectEuResults": 0, "deleted": null, "isArchived": false, "isDeleted": false, "isRecycledRoot": false, "ownerDomainName": "Beagle Systems GmbH", "ownerUserName": "Andreas Gherman", "created": "2024-07-24T12:29:39.0176194+00:00", "userCreatedName": "Andreas Gherman", "updated": "2024-07-24T12:31:35.3620659+00:00", "userUpdatedName": "Andreas Gherman" }]]></SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            13.791011,54.008689,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Document>
+  </Document>
+</kml>

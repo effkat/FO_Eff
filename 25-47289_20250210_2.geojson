@@ -1,0 +1,215 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.911276728037137,
+                    53.62905988329237,
+                    120.0
+                ]
+            },
+            "properties": {
+                "fn:type": "point",
+                "fn:color": "#376ef5",
+                "fn:title": "N3_naturschutzgebiete",
+                "fn:bufferRadius": 120
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.88650493170283,
+                    53.64009074727247,
+                    120.0
+                ]
+            },
+            "properties": {
+                "fn:type": "point",
+                "fn:color": "#376ef5",
+                "fn:title": "N4_vogelschutzgebiete",
+                "fn:bufferRadius": 120
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.892961478221764,
+                    53.60808316668738,
+                    120.0
+                ]
+            },
+            "properties": {
+                "fn:type": "point",
+                "fn:color": "#376ef5",
+                "fn:title": "N2_naturschutzgebiete",
+                "fn:bufferRadius": 120
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        10.85036506113559,
+                        53.60148306555925,
+                        120.0
+                    ],
+                    [
+                        10.865744433712223,
+                        53.600929965590836,
+                        120.0
+                    ],
+                    [
+                        10.878016862333936,
+                        53.60102214942211,
+                        120.0
+                    ],
+                    [
+                        10.887648388594158,
+                        53.604893688664305,
+                        120.0
+                    ],
+                    [
+                        10.900852900402043,
+                        53.6128200189429,
+                        120.0
+                    ],
+                    [
+                        10.908154218695529,
+                        53.62544377476712,
+                        120.0
+                    ],
+                    [
+                        10.914678801000832,
+                        53.632997793493104,
+                        120.0
+                    ],
+                    [
+                        10.91198696526888,
+                        53.63843171941514,
+                        120.0
+                    ],
+                    [
+                        10.880417975689141,
+                        53.64048689371333,
+                        120.0
+                    ]
+                ]
+            },
+            "properties": {
+                "fn:type": "line-buffer",
+                "fn:color": "#376ef5",
+                "fn:waypointSpeed": [
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "fn:waypointTurnMode": [
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0"
+                ],
+                "fn:bufferAltitude": 120,
+                "fn:bufferBaseAltitude": 0,
+                "fn:bufferRadius": 120
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.870421953931242,
+                    53.60096521158428,
+                    120.0
+                ]
+            },
+            "properties": {
+                "fn:type": "point",
+                "fn:color": "#376ef5",
+                "fn:title": "N1_vogelschutzgebiete",
+                "fn:bufferRadius": 120
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.0,
+                    53.5
+                ]
+            },
+            "properties": {
+                "BaseData": {
+                    "number": "25-47289",
+                    "name": "FOdoc_Naturschutzgebiet",
+                    "description": "Projekt um Flugroute zu erstellen, die 2 Schutzgebiete schneidet\n",
+                    "startDate": "2025-02-11T08:00:00+00:00",
+                    "endDate": "2025-02-11T09:00:00+00:00",
+                    "deadlineDate": null,
+                    "durationInHours": 60,
+                    "duration": 60,
+                    "location": "53.500000, 10.000000",
+                    "addressAdditional": null,
+                    "street": null,
+                    "zipCode": null,
+                    "houseNumber": null,
+                    "city": null,
+                    "country": null,
+                    "coordinateLat": 53.5,
+                    "coordinateLng": 10.0,
+                    "upperLimitAGL": 120,
+                    "lowerLimitAGL": 0,
+                    "safetyBufferRadius": 120,
+                    "jsonData": null,
+                    "isReferenceProject": false,
+                    "isTemplate": false,
+                    "isFollowing": false,
+                    "fileCount": 0,
+                    "totalImageCount": 0,
+                    "uncheckedImageCount": 0,
+                    "checkedImageCount": 0,
+                    "checkedWithFindingsImageCount": 0,
+                    "orthophotoCount": 0,
+                    "pointCloudCount": 0,
+                    "findingCount": 0,
+                    "reportCount": 0,
+                    "damageClasses": null,
+                    "projectEuInputs": 0,
+                    "projectEuResults": 0,
+                    "deleted": null,
+                    "isArchived": false,
+                    "isDeleted": false,
+                    "isRecycledRoot": false,
+                    "ownerDomainName": "Beagle Systems GmbH",
+                    "ownerUserName": "Freya Kathmann",
+                    "created": "2025-02-10T13:41:15.4123419+00:00",
+                    "userCreatedName": "Freya Kathmann",
+                    "updated": "2025-02-10T15:28:10.4128699+00:00",
+                    "userUpdatedName": "Freya Kathmann"
+                }
+            }
+        }
+    ]
+}
