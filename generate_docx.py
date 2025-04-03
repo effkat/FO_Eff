@@ -665,28 +665,21 @@ def generate_docx_report(output_path):
         # Insert an image into the right cell
         right_cell.paragraphs[0].clear()  
         run = right_cell.paragraphs[0].add_run()
-        run.add_picture('beagle.png', width=Mm(50))  
+        run.add_picture('beagle.png', width=Mm(40))  
 
         # Align the text to the left for the left cell
-        left_cell.paragraphs[0].alignment = 0  
+        left_cell.paragraphs[0].alignment = 0 
+        left_cell.vertical_alignment = WD_ALIGN_VERTICAL.BOTTOM
 
         # Align the image to the right side of the cell
-        right_cell.paragraphs[0].alignment = 2  
+        right_cell.paragraphs[0].alignment = 2 
+        left_cell.vertical_alignment = WD_ALIGN_VERTICAL.BOTTOM
 
         # Add a line below the header
         line_paragraph = header.add_paragraph()
-        line_paragraph.paragraph_format.space_before = 0
+        #line_paragraph.paragraph_format.space_before = 0
         
         insertHR(line_paragraph)
-    
-    #generate page numbers
-
-    # def create_element(name):
-    #     return OxmlElement(name)
-
-    # def create_attribute(element, name, value):
-    #     element.set(ns.qn(name), value)
-
 
     def add_page_number(run):
         run.text = 'Page '
@@ -740,21 +733,38 @@ def generate_docx_report(output_path):
                    f"{line_length_km:.2f} km", 
                    f"{equivalent_3d_distance:.2f} km", 
                    #f"\n"
-                   f"{int(flight_time_octo)} min\n"
+                   f"{int(flight_time_octo)} min"
                    #f"\n"
                    ]
+        col_widths = [60, 35, 35, 45]
 
+        # generate table
         table = document.add_table(rows=2, cols=4)
+       
+        table.rows[0].height = Mm(10)
+        table.rows[1].height = Mm(15)
+
+        for i in range(len(col_widths)):
+            table.columns[i].width = Mm(col_widths[i])
+
         heading_cells = table.rows[0].cells
         data_cells = table.rows[1].cells
 
+        
+
         for i in range(len(headers)):
-            heading_cells[i].paragraphs[0].add_run(headers[i]).bold = True
+            run = heading_cells[i].paragraphs[0].add_run(headers[i])
+            run.bold = True
             heading_cells[i].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            heading_cells[i].vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+            run.font.size = Pt(9)
 
         for i in range(len(table_data)):
-            data_cells[i].paragraphs[0].add_run(table_data[i])
+            run = data_cells[i].paragraphs[0].add_run(table_data[i])
             data_cells[i].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            data_cells[i].vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+            run.font.size = Pt(9)
+
 
         table.style = 'Table Grid'
 
@@ -762,48 +772,36 @@ def generate_docx_report(output_path):
 
         bbox_df = calculate_extreme_points_dataframe(geo_data)
         cord_table = extract_points_from_geo_data(geo_data)
+        table_length = bbox_df.shape[0]+1+cord_table.shape[0]
 
-        table = document.add_table(bbox_df.shape[0]+1+cord_table.shape[0], bbox_df.shape[1])
-        #headers = ["Point", "Latitude", "Longitude"]
+        table = document.add_table(table_length, bbox_df.shape[1])
 
-       
+        for i in range(table_length):
+            table.rows[i].height = Mm(8)
+        
 
         heading_cells = table.rows[0].cells
         data_cells = [table.rows[i+1].cells for i in range(len(table.rows[1:]))]
 
-        # j = columns 
-        # i = rows
         i_0 = 0
         for j in range(bbox_df.shape[-1]):
             heading_cells[j].paragraphs[0].add_run(bbox_df.columns[j]).bold = True
             heading_cells[j].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            heading_cells[j].vertical_alignment = WD_ALIGN_VERTICAL.CENTER
 
         for i in range(bbox_df.shape[0]):
             i_0 += 1
             for j in range(bbox_df.shape[-1]):
                 data_cells[i][j].paragraphs[0].add_run(str(bbox_df.values[i,j]))
                 data_cells[i][j].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+                data_cells[i][j].vertical_alignment = WD_ALIGN_VERTICAL.CENTER
             
 
         for i in range(cord_table.shape[0]):
             for j in range(cord_table.shape[-1]):
                 data_cells[i+i_0][j].paragraphs[0].add_run(str(cord_table.values[i,j]))
                 data_cells[i+i_0][j].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-
-        # # add the header rows
-        # for j in range(bbox_df.shape[-1]):
-        #     table.cell(0,j).text = bbox_df.columns[j]
-
-        # # add the bbox_df rows
-        # for i in range(bbox_df.shape[0]):
-        #     for j in range(bbox_df.shape[-1]):
-        #         table.cell(i+1,j).text = str(bbox_df.values[i,j])
-        #         j_0+=1
-        
-        # #add the cord_table rows
-        # for i in range(cord_table.shape[0]):
-        #     for j in range(cord_table.shape[-1]):
-        #         table.cell(i+1,j+j_0).text = str(cord_table.values[i,j])
+                data_cells[i][j].vertical_alignment = WD_ALIGN_VERTICAL.CENTER
 
         table.style = 'Table Grid'
 
@@ -870,22 +868,22 @@ def generate_docx_report(output_path):
     style = document.styles['Normal']
     font = style.font
     font.name = 'Montserrat'           
-    font.size = Pt(12)            
+    font.size = Pt(10)            
     font.color.rgb = RGBColor(0,0,0)
     
     # Set the default font for all paragraphs
     style = document.styles['Heading 1']
     font = style.font
     font.name = 'Montserrat'           
-    font.size = Pt(14)            
+    font.size = Pt(11)            
     font.color.rgb = RGBColor(0,0,0)
-    font.bold = True
+    font.bold = False
 
     # Set the default font for all paragraphs
     style = document.styles['Heading 2']
     font = style.font
     font.name = 'Montserrat'
-    font.size = Pt(14)
+    font.size = Pt(11)
     font.color.rgb = RGBColor(0,0,0)
     font.bold = False
 
@@ -911,12 +909,15 @@ def generate_docx_report(output_path):
     #intro paragraph
 
     intro_para = document.add_paragraph()
-    intro_para_text = f"Appendix {suffix} to the Flight Operation Document {route_name[:10]} \n"+ f"{datetime.date.today().strftime('%d.%m.%Y')}\n"+f"ISSUE {issue}\n"+f"Flight Route {suffix}"
-    intro_para.add_run(intro_para_text)
+    run = intro_para.add_run( f"Appendix {suffix} to the Flight Operation Document {route_name[:10]} \n"+f"ISSUE {issue}," +f"{datetime.date.today().strftime('%d.%m.%Y')} \n"+f"Flight Route {suffix}")
+    run.font.size = Pt(11)
+    run.font.bold = True
+
+
 
     #route overview
 
-    document.add_heading('1. Route Overview', 1)
+    document.add_heading('1. ROUTE OVERVIEW', 1)
 
     route_overview_para = document.add_paragraph()
     route_overview_para.add_run(f"\n Figure A{suffix}.1 gives a general overview of the mission.\n")
@@ -926,39 +927,39 @@ def generate_docx_report(output_path):
 
     #Flight distances and Times
 
-    document.add_heading('2. Flight Distances and Times', 1)
+    document.add_heading('2. FLIGHT DISTANCES ', 1)
 
     flight_distances_para = document.add_paragraph()
     flight_distances_para.add_run('\n')
     generate_distance_table(bundesland, route_length)
 
     # Takeoff and Landing Sites
-    document.add_heading('3. Takeoff and Landing Sites', 1)
+    document.add_heading('3. TAKE OFF/LANDING SITE', 1)
     TOL_para = document.add_paragraph()
     TOL_para.add_run(f" \n Takeoff and Landing occur at coordinates ({latitude} {longitude}), see Figure A{suffix}.2 for details.")
     image2_run = TOL_para.add_run()
     image2_run.add_picture(image_path2, width=Mm(160))
     
-    document.add_heading('4. Detailed Information', 1)
+    document.add_heading('4. DETAILED INFORMATION', 1)
 
 
     # Population Density
     document.add_heading('Detailed Population Density Assessment',2)
 
     population_para = document.add_paragraph()
-    population_para.add_run(f"None required")
+    population_para.add_run(f"None required.")
 
     # Individual Approvals
 
     document.add_heading('Individual Approvals',2)
     individual_approvals_para = document.add_paragraph()
-    individual_approvals_para.add_run(f"None required")
+    individual_approvals_para.add_run(f"None required.")
 
     # Highways
 
     document.add_heading('Highway',2)
     highway_para = document.add_paragraph()
-    highway_para.add_run(f"None required")
+    highway_para.add_run(f"None required.")
 
     # Railways    
 
@@ -967,7 +968,7 @@ def generate_docx_report(output_path):
 
     railways = get_railway_names(geo_data)
     if railways == []:
-        railway_para.add_run(f"None required")
+        railway_para.add_run(f"None required.")
     else:
         railway_para.add_run(f"See Figure A{suffix}.1 and under 'Coordinates'. \n")
         railways.sort(key=lambda x: x["point_title"])
@@ -997,7 +998,7 @@ def generate_docx_report(output_path):
 
     document.add_heading('Power Lines',2)
     power_lines_para = document.add_paragraph()
-    power_lines_para.add_run(f"None required")
+    power_lines_para.add_run(f"None required.")
 
     #PIS
 
@@ -1041,31 +1042,21 @@ def generate_docx_report(output_path):
     # Coordinates   
     document.add_heading('5. Coordinates', 1)
 
-
     coordinates_para = document.add_paragraph()
     coordinates_para.add_run('\n')
-
     generate_coordinate_table(geo_data)
 
     document.add_page_break()
 
+    # Copyrights
     copyright_table = document.add_table(1,1)
-
     copyright_table.rows[0].height = Mm(200)
-
     cell = copyright_table.cell(0,0)
-
-
     copyright_para = cell.paragraphs[0]
-
-    copyright_para.add_run("Information stared in this paper is proprietary and belongs exclusively to Beagle Systems and may not be reproduced without any prior notice the knowledge or a written consent approved by Beagle Systems.")
-
+    copyright_para.add_run("Information stated in this paper \n is proprietary and belongs exclusively \n to Beagle Systems and may not be reproduced \n without any prior notice the knowledge \n or a written consent \n approved by Beagle Systems.")
     copyright_para.add_run(" \n www.beaglesystems.com")
-
     cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
     copyright_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
-
-    copyright_table.style = 'Table Grid'
 
     footer()
 
