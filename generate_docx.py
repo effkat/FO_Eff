@@ -1,11 +1,12 @@
 from docx import Document
-from docx.shared import Pt, Inches, Mm, RGBColor
+from docx.shared import Pt, Mm, RGBColor
 import os
 from fpdf import FPDF
 from fpdf import HTMLMixin
 from docx.oxml import OxmlElement, ns
 from docx.oxml.ns import qn
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.table import WD_ALIGN_VERTICAL
 import datetime
 import pandas as pd
 import json
@@ -647,9 +648,9 @@ def generate_docx_report(output_path):
         section = document.sections[0]
         header = section.header
 
-        table = header.add_table(rows=1, cols=2, width= Inches(8)) 
-        table.columns[0].width = Inches(5)  
-        table.columns[1].width = Inches(3)  
+        table = header.add_table(rows=1, cols=2, width= Mm(170)) 
+        table.columns[0].width = Mm(120)  
+        table.columns[1].width = Mm(50)  
 
         # Get the first row of the table
         row = table.rows[0]
@@ -664,7 +665,7 @@ def generate_docx_report(output_path):
         # Insert an image into the right cell
         right_cell.paragraphs[0].clear()  
         run = right_cell.paragraphs[0].add_run()
-        run.add_picture('beagle.png', width=Inches(1.5))  
+        run.add_picture('beagle.png', width=Mm(50))  
 
         # Align the text to the left for the left cell
         left_cell.paragraphs[0].alignment = 0  
@@ -680,24 +681,24 @@ def generate_docx_report(output_path):
     
     #generate page numbers
 
-    def create_element(name):
-        return OxmlElement(name)
+    # def create_element(name):
+    #     return OxmlElement(name)
 
-    def create_attribute(element, name, value):
-        element.set(ns.qn(name), value)
+    # def create_attribute(element, name, value):
+    #     element.set(ns.qn(name), value)
 
 
     def add_page_number(run):
         run.text = 'Page '
-        fldChar1 = create_element('w:fldChar')
-        create_attribute(fldChar1, 'w:fldCharType', 'begin')
+        fldChar1 = OxmlElement('w:fldChar')
+        fldChar1.set(ns.qn('w:fldCharType'), 'begin')
 
-        instrText = create_element('w:instrText')
-        create_attribute(instrText, 'xml:space', 'preserve')
+        instrText = OxmlElement('w:instrText')
+        instrText.set(ns.qn('xml:space'), 'preserve')
         instrText.text = "PAGE"
 
-        fldChar2 = create_element('w:fldChar')
-        create_attribute(fldChar2, 'w:fldCharType', 'end')
+        fldChar2 = OxmlElement('w:fldChar')
+        fldChar2.set(ns.qn( 'w:fldCharType'), 'end')
 
         run._r.append(fldChar1)
         run._r.append(instrText)
@@ -725,7 +726,6 @@ def generate_docx_report(output_path):
 
     def generate_distance_table(bundesland, route_length):
         df = pd.read_csv("3DFaktor.csv")  # CSV-Datei laden
-        bundesland = get_bundesland_from_geo_data(geo_data)  # Bundesland bestimmen
         D_Faktor = df[df.iloc[:, 1] == bundesland].iloc[0, 2] if bundesland in df.iloc[:, 1].values else "Nicht gefunden"
 
         # Berechnungen für Tabelle
@@ -764,22 +764,46 @@ def generate_docx_report(output_path):
         cord_table = extract_points_from_geo_data(geo_data)
 
         table = document.add_table(bbox_df.shape[0]+1+cord_table.shape[0], bbox_df.shape[1])
+        #headers = ["Point", "Latitude", "Longitude"]
 
-        j_0 = 0
-        # add the header rows
+       
+
+        heading_cells = table.rows[0].cells
+        data_cells = [table.rows[i+1].cells for i in range(len(table.rows[1:]))]
+
+        # j = columns 
+        # i = rows
+        i_0 = 0
         for j in range(bbox_df.shape[-1]):
-            table.cell(0,j).text = bbox_df.columns[j]
+            heading_cells[j].paragraphs[0].add_run(bbox_df.columns[j]).bold = True
+            heading_cells[j].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
 
-        # add the bbox_df rows
         for i in range(bbox_df.shape[0]):
+            i_0 += 1
             for j in range(bbox_df.shape[-1]):
-                table.cell(i+1,j).text = str(bbox_df.values[i,j])
-                j_0+=1
-        
-        #add the cord_table rows
+                data_cells[i][j].paragraphs[0].add_run(str(bbox_df.values[i,j]))
+                data_cells[i][j].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            
+
         for i in range(cord_table.shape[0]):
             for j in range(cord_table.shape[-1]):
-                table.cell(i+1,j+j_0).text = str(cord_table.values[i,j])
+                data_cells[i+i_0][j].paragraphs[0].add_run(str(cord_table.values[i,j]))
+                data_cells[i+i_0][j].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+        # # add the header rows
+        # for j in range(bbox_df.shape[-1]):
+        #     table.cell(0,j).text = bbox_df.columns[j]
+
+        # # add the bbox_df rows
+        # for i in range(bbox_df.shape[0]):
+        #     for j in range(bbox_df.shape[-1]):
+        #         table.cell(i+1,j).text = str(bbox_df.values[i,j])
+        #         j_0+=1
+        
+        # #add the cord_table rows
+        # for i in range(cord_table.shape[0]):
+        #     for j in range(cord_table.shape[-1]):
+        #         table.cell(i+1,j+j_0).text = str(cord_table.values[i,j])
 
         table.style = 'Table Grid'
 
@@ -874,8 +898,8 @@ def generate_docx_report(output_path):
     
     # route_name = "Unknown Route"
     # suffix = "28"
-    # 
-    # image_path_overview = "flight_route.png"
+    # issue = '00'
+    # image_path= "flight_route.png"
     # bundesland = "Berlin"
     # route_length = 1000
     # image_path2="TO-Site.png"
@@ -895,25 +919,25 @@ def generate_docx_report(output_path):
     document.add_heading('1. Route Overview', 1)
 
     route_overview_para = document.add_paragraph()
-    route_overview_para.add_run(f"Figure A{suffix}.1 gives a general overview of the mission.\n")
+    route_overview_para.add_run(f"\n Figure A{suffix}.1 gives a general overview of the mission.\n")
     image1_run = route_overview_para.add_run()
-    image1_run.add_picture(image_path, width=Inches(19.5))
+    image1_run.add_picture(image_path, width=Mm(160))
     
 
     #Flight distances and Times
 
     document.add_heading('2. Flight Distances and Times', 1)
 
-    #flight_distances_para = document.add_paragraph()
-
+    flight_distances_para = document.add_paragraph()
+    flight_distances_para.add_run('\n')
     generate_distance_table(bundesland, route_length)
 
     # Takeoff and Landing Sites
     document.add_heading('3. Takeoff and Landing Sites', 1)
     TOL_para = document.add_paragraph()
-    TOL_para.add_run(f"Takeoff and Landing occur at coordinates ({latitude} {longitude}), see Figure A{suffix}.2 for details.")
+    TOL_para.add_run(f" \n Takeoff and Landing occur at coordinates ({latitude} {longitude}), see Figure A{suffix}.2 for details.")
     image2_run = TOL_para.add_run()
-    image2_run.add_picture(image_path2, width=Inches(19.5))
+    image2_run.add_picture(image_path2, width=Mm(160))
     
     document.add_heading('4. Detailed Information', 1)
 
@@ -922,22 +946,19 @@ def generate_docx_report(output_path):
     document.add_heading('Detailed Population Density Assessment',2)
 
     population_para = document.add_paragraph()
-    population_para_text = f"None required"
-    population_para.add_run(population_para_text)
+    population_para.add_run(f"None required")
 
     # Individual Approvals
 
     document.add_heading('Individual Approvals',2)
     individual_approvals_para = document.add_paragraph()
-    individual_approvals_para_text = f"None required"
-    individual_approvals_para.add_run(individual_approvals_para_text)
+    individual_approvals_para.add_run(f"None required")
 
     # Highways
 
     document.add_heading('Highway',2)
     highway_para = document.add_paragraph()
-    highway_para_text = f"None required"
-    highway_para.add_run(highway_para_text)
+    highway_para.add_run(f"None required")
 
     # Railways    
 
@@ -946,8 +967,7 @@ def generate_docx_report(output_path):
 
     railways = get_railway_names(geo_data)
     if railways == []:
-        railway_para_text = f"None required"
-        railway_para.add_run(railway_para_text)
+        railway_para.add_run(f"None required")
     else:
         railway_para.add_run(f"See Figure A{suffix}.1 and under 'Coordinates'. \n")
         railways.sort(key=lambda x: x["point_title"])
@@ -956,7 +976,7 @@ def generate_docx_report(output_path):
        
     
 
-    # Waterways
+    #Waterways
     document.add_heading('Federal Waterways',2)
     waterways_para = document.add_paragraph()
     waterways = get_waterway_names(geo_data)
@@ -977,8 +997,7 @@ def generate_docx_report(output_path):
 
     document.add_heading('Power Lines',2)
     power_lines_para = document.add_paragraph()
-    power_lines_para_text = f"None required"
-    power_lines_para.add_run(power_lines_para_text)
+    power_lines_para.add_run(f"None required")
 
     #PIS
 
@@ -1022,8 +1041,31 @@ def generate_docx_report(output_path):
     # Coordinates   
     document.add_heading('5. Coordinates', 1)
 
+
+    coordinates_para = document.add_paragraph()
+    coordinates_para.add_run('\n')
+
     generate_coordinate_table(geo_data)
 
+    document.add_page_break()
+
+    copyright_table = document.add_table(1,1)
+
+    copyright_table.rows[0].height = Mm(200)
+
+    cell = copyright_table.cell(0,0)
+
+
+    copyright_para = cell.paragraphs[0]
+
+    copyright_para.add_run("Information stared in this paper is proprietary and belongs exclusively to Beagle Systems and may not be reproduced without any prior notice the knowledge or a written consent approved by Beagle Systems.")
+
+    copyright_para.add_run(" \n www.beaglesystems.com")
+
+    cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+    copyright_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+    copyright_table.style = 'Table Grid'
 
     footer()
 
@@ -1031,6 +1073,7 @@ def generate_docx_report(output_path):
 
     print(f"Report saved as {output_docx_path}")
 
-output_docx_path = "flight_report.docx"
+output_docx_path = "/Users/freya/Documents/00_drive/flight_report.docx"
+
 
 generate_docx_report(output_docx_path)
